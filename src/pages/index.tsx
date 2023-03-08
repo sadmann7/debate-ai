@@ -19,7 +19,7 @@ const Home: NextPageWithLayout = () => {
             Debate with AI and get feedback on your arguments.
           </p>
         </div>
-        <div className="flex w-full gap-4 items-center max-w-sm">
+        <div className="flex w-full gap-4 items-center max-w-xs">
           <Button
             aria-label="navigate to debate page"
             onClick={() => Router.push("/debate")}
