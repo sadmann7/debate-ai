@@ -1,20 +1,22 @@
 import Head from "next/head";
 
 type MetaProps = {
+  siteName?: string;
   title?: string;
   description?: string;
   image?: string;
 };
 
 const Meta = ({
-  title = "BingeGPT",
-  description = "Discover Your Next Binge-Worthy Show",
-  image = "https://bingegpt.vercel.app/api/og?title=BingeGPT&description=Discover%20Your%20Next%20Binge-Worthy%20Show",
+  siteName = "DebateAI",
+  title = "DebateAI",
+  description = "Sharpen your debating skills by debating with AI",
+  image = "https://debateai.vercel.app/api/og?title=DebateAI&description=Sharpen%20your%20debating%20skills%20by%20debating%20with%20AI",
 }: MetaProps) => {
   return (
     <Head>
       <meta name="description" content={description} />
-      <meta property="og:site_name" content="BingeGPT" />
+      <meta property="og:site_name" content={siteName} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:image" content={image} />

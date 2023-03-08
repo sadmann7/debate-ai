@@ -1,21 +1,8 @@
+import { Icons } from "@/components/ui/icons";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-// external imports
-import { Github, Speaker } from "lucide-react";
-
-const navLinks = [
-  {
-    name: "Github",
-    icon: <Github aria-hidden="true" className="h-6 w-6" />,
-    href: "https://github.com/sadmann7/watchcopilot.git",
-    isExternal: true,
-  },
-];
-
 const Header = () => {
-  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
 
   // handle scroll
@@ -26,7 +13,6 @@ const Header = () => {
       setIsScrolled(false);
     }
   };
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -37,48 +23,32 @@ const Header = () => {
       aria-label="header"
       className={`fixed top-0 left-0 z-20 flex w-full items-center gap-4 transition ${
         isScrolled
-          ? "bg-gray-700/80 shadow-md backdrop-blur-md backdrop-saturate-150 backdrop-filter duration-300 ease-in-out"
+          ? "bg-slate-800/80 shadow-md backdrop-blur-md backdrop-saturate-150 backdrop-filter duration-300 ease-in-out"
           : "bg-transparent"
       }`}
       onScroll={handleScroll}
     >
-      <nav className="container mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <nav className="container mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
         <Link
           aria-label="navigate to home page"
           href="/"
-          className="flex items-center gap-2 text-gray-100 transition-colors hover:text-white active:text-gray-100"
+          className="flex items-center gap-2 text-slate-100 transition-colors hover:text-white active:text-slate-100"
         >
-          <Speaker aria-hidden="true" className="h-5 w-5" />
+          <Icons.logo aria-hidden="true" className="h-6 w-6" />
           <span className="text-xl font-medium">DebateAI</span>
         </Link>
         <div className="flex items-center gap-2">
-          {navLinks.map((link, index) =>
-            link.isExternal ? (
-              <a
-                aria-label={`navigate to ${link.name} page`}
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-md p-1.5 text-base text-white transition hover:bg-gray-600 active:scale-95"
-              >
-                {link.icon}
-              </a>
-            ) : (
-              <Link
-                aria-label={`navigate to ${link.name} page`}
-                key={index}
-                href={link.href}
-                className={`rounded-md p-1.5 text-base text-white transition hover:bg-gray-600 active:scale-95 ${
-                  router.pathname === link.href
-                    ? "bg-gray-600"
-                    : "bg-transparent"
-                }`}
-              >
-                {link.icon}
-              </Link>
-            )
-          )}
+          <Link
+            aria-label="navigate to github repo"
+            href="https://github.com/sadmann7/debate-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="rounded-md p-2 text-base text-slate-100 transition hover:bg-slate-700 active:scale-95">
+              <Icons.gitHub aria-hidden="true" className="h-6 w-6" />
+            </div>
+            <span className="sr-only">Github</span>
+          </Link>
         </div>
       </nav>
     </header>

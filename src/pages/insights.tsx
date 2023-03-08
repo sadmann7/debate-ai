@@ -10,7 +10,7 @@ const schema = z.object({
 });
 type Inputs = z.infer<typeof schema>;
 
-const Debate: NextPageWithLayout = () => {
+const Insights: NextPageWithLayout = () => {
   // react-hook-form
   const { register, handleSubmit, formState } = useForm<Inputs>({
     resolver: zodResolver(schema),
@@ -22,7 +22,7 @@ const Debate: NextPageWithLayout = () => {
   return (
     <>
       <Head>
-        <title>Debate with AI | DebateAI</title>
+        <title>Get insights on your topic | DebateAI</title>
       </Head>
       <main className="container mt-20 mb-16 flex flex-col items-center justify-center gap-10">
         <form
@@ -57,6 +57,6 @@ const Debate: NextPageWithLayout = () => {
   );
 };
 
-export default Debate;
+export default Insights;
 
-Debate.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
+Insights.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
