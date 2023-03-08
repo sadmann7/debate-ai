@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 // external imports
-import { Github, Heart, Tv2 } from "lucide-react";
+import { Github, Speaker } from "lucide-react";
 
 const navLinks = [
   {
@@ -11,12 +11,6 @@ const navLinks = [
     icon: <Github aria-hidden="true" className="h-6 w-6" />,
     href: "https://github.com/sadmann7/watchcopilot.git",
     isExternal: true,
-  },
-  {
-    name: "Top ",
-    icon: <Heart aria-hidden="true" className="h-6 w-6" />,
-    href: "/shows/favorited-shows",
-    isExternal: false,
   },
 ];
 
@@ -54,8 +48,8 @@ const Header = () => {
           href="/"
           className="flex items-center gap-2 text-gray-100 transition-colors hover:text-white active:text-gray-100"
         >
-          <Tv2 aria-hidden="true" className="h-5 w-5" />
-          <span className="text-xl font-medium">BingeGPT</span>
+          <Speaker aria-hidden="true" className="h-5 w-5" />
+          <span className="text-xl font-medium">DebateAI</span>
         </Link>
         <div className="flex items-center gap-2">
           {navLinks.map((link, index) =>

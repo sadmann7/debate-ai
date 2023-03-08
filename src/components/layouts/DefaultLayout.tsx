@@ -1,6 +1,6 @@
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
-import Meta from "@/components/layout/Meta";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
+import Meta from "@/components/layouts/Meta";
 import Head from "next/head";
 import { type ReactNode } from "react";
 

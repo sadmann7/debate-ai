@@ -25,7 +25,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     return (
       <button
-        className={`flex h-10 w-full items-center justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm transition focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 focus:ring-offset-gray-100 disabled:pointer-events-none disabled:bg-opacity-50 ${className} ${
+        className={`flex w-full items-center justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm transition focus:outline-none focus:ring-2 focus:ring-slate-100 focus:ring-offset-2 focus:ring-offset-slate-800 disabled:pointer-events-none disabled:bg-opacity-50 ${className} ${
           variant === "primary"
             ? "bg-violet-600 text-white hover:bg-violet-700 active:bg-violet-600"
             : variant === "secondary"
